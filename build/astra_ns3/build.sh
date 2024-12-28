@@ -32,7 +32,8 @@ function cleanup_result {
 }
 function compile {
     # Only compile & Run the AstraSimNetwork ns3program
-    cp "${ASTRA_SIM_DIR}"/network_frontend/ns3/AstraSimNetwork.cc "${NS3_DIR}"/simulation/scratch/
+    cp "${ASTRA_SIM_DIR}"/network_frontend/ns3/AstraSimNetwork.cc "${NS3_DIR}"/src/core/model/
+    cp "${ASTRA_SIM_DIR}"/network_frontend/ns3/default-simulator-impl.cc "${NS3_DIR}"/simulation/scratch/
     cp "${ASTRA_SIM_DIR}"/network_frontend/ns3/*.h "${NS3_DIR}"/simulation/scratch/
     cd "${NS3_DIR}/simulation"
     CC='gcc-4.9' CXX='g++-4.9' ./waf configure 
