@@ -1,6 +1,9 @@
-# Multiverse System Simulator (based on ASTRA-Sim 1.0) #
+# ASTRA-Sim #
 
-### What is ASTRA-Sim? ###
+We have added a shared memory communication method and implemented a new network interface to support the new network simulator, but we still require some capabilities from ns-3. Please follow the instructions in the "running NS3" section to build it.
+
+### What is this repository for? ###
+
 This is the ASTRA-sim distributed Deep Learning Training simulator, developed in collaboration between Georgia Tech, Facebook and Intel.
 
 An overview is presented here:
@@ -40,16 +43,6 @@ $ git submodule init
 $ git submodule update
 ```
 
-#### Instructions for compiling & running Garnet2.0 as the network simulator
-1. Run `./build/astra_garnet/build.sh -c` to compile and integrate astra-sim with gem5 (`-l` flag will clean the compilation). This will create a binary file where garnet is integrated with astra-sim. The analytical backend is hosted at  https://github.com/georgia-tech-synergy-lab/gem5_astra .
-2. Run an example inside the `examples/` directory with garnet as a backend. Example: `examples/run_allreduce.sh -n garnet`. This command will run a single all-reduce collective on a Torus topology. 
-3. The results of example script runs will be dumped inside `examples/results/` path.
-
-#### Instructions for compiling & running analytical backend as the network simulator
-1. Run `./build/astra_analytical/build.sh -c` to compile and integrate astra-sim with analytical backend (`-l` flag will clean the compilation). This will create a binary file where analytical backend is integrated with astra-sim. Please refer to [this page](https://github.com/astra-sim/astra-sim/tree/master/build/astra_analytical) for more details about compilation. The analytical backend is hosted at https://github.com/astra-sim/analytical .
-2. Run an example inside the `examples/` directory with the analytical model as a backend. Example: `examples/run_allreduce.sh -n analytical`. This command will run a single all-reduce collective on a Torus topology. 
-3. The results of example script runs will be dumped inside `examples/results/` path. 
-
 #### Instructions for compiling & running NS3 as the network simulator
 > This version of ns3 requires gcc-4.9, g++-4.9, and python2.7. It also requires the `python` command to default to `python2.7`. 
 > In the long term, Astrasim 2.0 will include a version of ns3 which does not need the above ancient dependencies.
@@ -61,6 +54,17 @@ $ git submodule update
 5. The stat files are written into `extern/network_backend/ns3-interface/simulation/scratch/results/` address. Note that this version supports multi-workload cases, meaning that for example, with the total of P NPUs, NPUs 0 : N can be allocated for one workload, and NPUs N+1 : P-1 for another workload. If multiple workloads are used, then each worklaod produces its own set of stat files. The stat file names are appended by number, showing the index of first NPU assigned for that workload.
 
 NOTE: The on-screen reported delays (no matter what backend is used) after the end of simulation are in cycles while the delays inside the csv files are in terms of microseconds.
+
+
+#### ~~Instructions for compiling & running Garnet2.0 as the network simulator~~
+1. ~~Run `./build/astra_garnet/build.sh -c` to compile and integrate astra-sim with gem5 (`-l` flag will clean the compilation). This will create a binary file where garnet is integrated with astra-sim. The analytical backend is hosted at  https://github.com/georgia-tech-synergy-lab/gem5_astra .~~
+2. ~~Run an example inside the `examples/` directory with garnet as a backend. Example: `examples/run_allreduce.sh -n garnet`. This command will run a single all-reduce collective on a Torus topology.~~ 
+3. ~~The results of example script runs will be dumped inside `examples/results/` path.~~
+
+#### ~~Instructions for compiling & running analytical backend as the network simulator~~
+1. ~~Run `./build/astra_analytical/build.sh -c` to compile and integrate astra-sim with analytical backend (`-l` flag will clean the compilation). This will create a binary file where analytical backend is integrated with astra-sim. Please refer to [this page](https://github.com/astra-sim/astra-sim/tree/master/build/astra_analytical) for more details about compilation. The analytical backend is hosted at https://github.com/astra-sim/analytical .~~
+2. ~~Run an example inside the `examples/` directory with the analytical model as a backend. Example: `examples/run_allreduce.sh -n analytical`. This command will run a single all-reduce collective on a Torus topology.~~ 
+
 
 #### ASTRA-SIM Binary Command Line Options
 When running the binary file (no matter what backend is used), the following options may be passed to the binary file (see example scripts):
