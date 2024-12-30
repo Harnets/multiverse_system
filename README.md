@@ -1,8 +1,8 @@
-# ASTRA-Sim #
+# Multiverse System Simulator (based on ASTRA-Sim 1.0) #
 
 We have added a shared memory communication method and implemented a new network interface to support the new network simulator, but we still require some capabilities from ns-3. Please follow the instructions in the "running NS3" section to build it.
 
-### What is this repository for? ###
+### What is ASTRA-Sim? ###
 
 This is the ASTRA-sim distributed Deep Learning Training simulator, developed in collaboration between Georgia Tech, Facebook and Intel.
 
