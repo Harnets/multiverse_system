@@ -1,6 +1,6 @@
-# ASTRA-Sim #
+# Multiverse System Simulator (based on ASTRA-Sim 1.0) #
 
-### What is this repository for? ###
+### What is ASTRA-Sim? ###
 This is the ASTRA-sim distributed Deep Learning Training simulator, developed in collaboration between Georgia Tech, Facebook and Intel.
 
 An overview is presented here:
