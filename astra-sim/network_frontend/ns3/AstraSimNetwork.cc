@@ -26,13 +26,13 @@
 using namespace std;
 using namespace ns3;
 
-std::vector<string> workloads{"microAllReduce.txt", "microAllToAll.txt"};
-std::vector<std::vector<int>> physical_dims{{8, 4}, {8, 4}};
-// std::vector<string> workloads{"3_A100-128-Megatron-GPT13B-tp4-pp1-dp32-mbs1-gbs32-seq2048-use_flash.txt"};
+// std::vector<string> workloads{"microAllReduce.txt", "microAllToAll.txt"};
+// std::vector<std::vector<int>> physical_dims{{8, 4}, {8, 4}};
+std::vector<string> workloads{"3_A100-128-Megatron-GPT13B-tp4-pp1-dp32-mbs1-gbs32-seq2048-use_flash.txt"};
 // std::vector<std::vector<int>> physical_dims{{8, 4}};
 // std::vector<string> workloads{"MLP_HybridParallel_Data_Model.txt"};
 // std::vector<string> workloads{"A100-128-Megatron-GPT13B-tp4-pp1-dp32-mbs1-gbs32-seq2048-use_flash.txt"};
-// std::vector<std::vector<int>> physical_dims{{4, 32}};
+std::vector<std::vector<int>> physical_dims{{4, 32}};
 
 auto start_time = std::chrono::high_resolution_clock::now();
 // // add for madrona
